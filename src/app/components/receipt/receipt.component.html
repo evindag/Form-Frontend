@@ -1,1 +1,31 @@
-<p>receipt works!</p>
+<div *ngIf="dataLoaded==false"  class="spinner-border text-primary" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+<table *ngIf="dataLoaded==true" class="table">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Tarih</th>
+      <th>Fiş No</th>
+      <th>Şirket</th>
+      <th>Açıklama</th>
+      <th>Fiş Türü</th>
+      <th>Toplam Tutar</th>
+      <th>KDV</th>
+      <th>Görsel</th>
+      <th>Kişi</th>
+    </tr>
+  </thead>
+  <tr *ngFor="let receipt of receipts">
+    <td>{{ receipt.receiptId }}</td>
+    <td>{{ receipt.date }}</td>
+    <td>{{ receipt.receiptNo }}</td>
+    <td>{{ receipt.company }}</td>
+    <td>{{ receipt.description }}</td>
+    <td>{{ receipt.receiptType }}</td>
+    <td>{{ receipt.totalCost }}</td>
+    <td>{{ receipt.vat }}</td>
+    <td>{{ receipt.image }}</td>
+    <td>{{ receipt.person }}</td>
+  </tr>
+</table>
