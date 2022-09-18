@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Receipt } from 'src/app/models/receipt';
 import { HttpClient } from '@angular/common/http';
-import { ReceiptResponseModel } from 'src/app/models/receiptResponseModel';
 import { ReceiptService } from 'src/app/services/receipt.service';
 
 @Component({
