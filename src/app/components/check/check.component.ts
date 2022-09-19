@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Check } from 'src/app/models/check';
 
 @Component({
   selector: 'app-check',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./check.component.css']
 })
 export class CheckComponent implements OnInit {
+
+  checks: Check[] =[];
 
   constructor() { }
 
