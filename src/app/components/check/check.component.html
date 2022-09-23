@@ -1,1 +1,26 @@
-<p>check works!</p>
+<table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Tarih</th>
+        <th>Makbuz No</th>
+        <th>Tutar</th>
+        <th>Açıklama</th>
+        <th>Görsel</th>
+        <th>Şirket</th>
+        <th>Kişi</th>
+        <th>Adres</th>
+      </tr>
+    </thead>
+    <tr *ngFor="let check of checks">
+      <td>{{ check.checkId }}</td>
+      <td>{{ check.date }}</td><td>
+      <td></td>
+      <td>{{ check.checkCost }}</td>
+      <td>{{ check.description }}</td>
+      <td>{{ check.image }}</td>
+      <td>{{ check.company }}</td>
+      <td>{{ check.person }}</td>
+      <td>{{ check.address }}</td>     
+    </tr>
+  </table>

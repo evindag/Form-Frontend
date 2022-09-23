@@ -3,6 +3,7 @@ import { Receipt } from 'src/app/models/receipt';
 import { HttpClient } from '@angular/common/http';
 import { ReceiptService } from 'src/app/services/receipt.service';
 
+
 @Component({
   selector: 'app-receipt',
   templateUrl: './receipt.component.html',
