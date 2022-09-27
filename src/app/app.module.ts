@@ -7,6 +7,9 @@ import { ReceiptComponent } from './components/receipt/receipt.component';
 import { CheckComponent } from './components/check/check.component';
 import { NaviComponent } from './components/navi/navi.component';
 import { MenuComponent } from './menu/menu.component';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { ReceiptPipePipe } from './pipes/receipt-pipe.pipe';
 
 
 
@@ -18,12 +21,15 @@ import { MenuComponent } from './menu/menu.component';
     CheckComponent,
     NaviComponent,
     MenuComponent,
+    ReceiptPipePipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
-  ],
+    HttpClientModule,
+    CommonModule,
+    FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

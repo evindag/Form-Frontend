@@ -12,7 +12,7 @@ import { ReceiptService } from 'src/app/services/receipt.service';
 export class ReceiptComponent implements OnInit {
   receipts: Receipt[] = [];
   dataLoaded = false;
-
+  filter = ""
   constructor(private receiptService: ReceiptService) {}
 
   ngOnInit(): void {
