@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Receipt } from 'src/app/models/receipt';
 import { HttpClient } from '@angular/common/http';
 import { ReceiptService } from 'src/app/services/receipt.service';
+import { ActivatedRoute } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -13,7 +15,8 @@ export class ReceiptComponent implements OnInit {
   receipts: Receipt[] = [];
   dataLoaded = false;
   filter = ""
-  constructor(private receiptService: ReceiptService) {}
+  constructor(private receiptService: ReceiptService,
+  private activatedRoute:ActivatedRoute, private toastrService:ToastrService) {}
 
   ngOnInit(): void {
     this.getReceipts();
@@ -26,4 +29,8 @@ export class ReceiptComponent implements OnInit {
       this.dataLoaded = true;
     });
   }
-}
+  delete(receipt:Receipt){
+    this.toastrService.remove(receipt.receiptId)
+    }
+  }
+

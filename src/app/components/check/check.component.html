@@ -1,3 +1,21 @@
+<div class="row">
+  <div class="col-12 m-4">
+    
+    <!-- <div class="input-group mb-3">
+      <input type="text" class="form-control" [(ngModel)]="filter" placeholder="Check Company" aria-label="Check Name" aria-describedby="button-addon2">
+      <button class="btn btn-outline-primary" type="button" id="button-addon2">Search</button>
+    </div> -->
+
+    <div class="mb-3">
+      <label for="filter" class="form-label"></label>
+      <input type="text" [(ngModel)]="filter" class="form-control" id="filter" 
+      placeholder="search">
+    </div>
+  </div>
+</div>
+<div *ngIf="filter" class="alert alert-primary">
+  {{filter}} searching.
+</div>
 <table class="table">
     <thead>
       <tr>
@@ -12,7 +30,7 @@
         <th>Adres</th>
       </tr>
     </thead>
-    <tr *ngFor="let check of checks">
+    <tr *ngFor="let check of checks | checkPipe:filter">
       <td>{{ check.checkId }}</td>
       <td>{{ check.date }}</td><td>
       <td></td>

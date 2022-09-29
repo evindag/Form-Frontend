@@ -10,6 +10,7 @@ import { CheckService } from 'src/app/services/check.service';
 export class CheckComponent implements OnInit {
 
   checks: Check[] =[];
+  filter = ""
   
 
   constructor(private checkService:CheckService) { }
