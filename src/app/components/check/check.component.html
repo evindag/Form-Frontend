@@ -19,9 +19,7 @@
 <table class="table">
     <thead>
       <tr>
-        <th>Id</th>
         <th>Tarih</th>
-        <th>Makbuz No</th>
         <th>Tutar</th>
         <th>Açıklama</th>
         <th>Görsel</th>
@@ -31,9 +29,7 @@
       </tr>
     </thead>
     <tr *ngFor="let check of checks | checkPipe:filter">
-      <td>{{ check.checkId }}</td>
       <td>{{ check.date }}</td><td>
-      <td></td>
       <td>{{ check.checkCost }}</td>
       <td>{{ check.description }}</td>
       <td>{{ check.image }}</td>

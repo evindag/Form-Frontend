@@ -1,5 +1,6 @@
-export interface Receipt{
+export interface addReceipt{
     id:string
+    receiptId:number;
     date:string;
     receiptNo:number;
     company:string;

@@ -8,14 +8,15 @@ import { CheckComponent } from './components/check/check.component';
 import { NaviComponent } from './components/navi/navi.component';
 import { MenuComponent } from './menu/menu.component';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations"
 import { ReceiptPipePipe } from './pipes/receipt-pipe.pipe';
 import { VatAddedPipe } from './pipes/vat-added.pipe';
 import { CheckPipe } from './pipes/check.pipe';
 import { FilterPipePipe } from './pipes/filter-pipe.pipe';
-import {ToastrModule} from "ngx-toastr"
-
+import {ToastrModule} from "ngx-toastr";
+import { AddReceiptComponent } from './add-receipt/add-receipt.component';
+import { AddCheckComponent } from './add-check/add-check.component';
 
 
 
@@ -30,6 +31,8 @@ import {ToastrModule} from "ngx-toastr"
     VatAddedPipe,
     CheckPipe,
     FilterPipePipe,
+    AddReceiptComponent,
+    AddCheckComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,6 +41,7 @@ import {ToastrModule} from "ngx-toastr"
     CommonModule,
     FormsModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     ToastrModule.forRoot({
       positionClass:"toast-bottom-right"
     })

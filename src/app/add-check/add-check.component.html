@@ -1,0 +1,94 @@
+<div class="content">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header"><h5 class="title">Makbuz Ekle</h5></div>
+      <div class="card-body">
+        <form [formGroup]="checkAddForm">
+          <div class="mb-3">
+            <label for="date">Tarih</label>
+            <div class="form-group">
+              <input
+                type="text"
+                id="date"
+                formControlName="date"
+                class="form-control"
+              />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="checkCost">Makbuz Tutarı</label>
+            <div class="form-group">
+              <input
+                type="number"
+                id="checkCost"
+                formControlName="checkCost"
+                class="form-control"
+              />
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="description">Açıklama</label>
+            <div class="form-group">
+              <input
+                type="text"
+                id="description"
+                formControlName="description"
+                class="form-control"
+              />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="image">Görsel</label>
+            <div class="form-group">
+              <input
+                type="text"
+                id="image"
+                formControlName="image"
+                class="form-control"
+              />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="company">Şirket</label>
+            <div class="form-group">
+              <input
+                type="text"
+                id="company"
+                formControlName="company"
+                class="form-control"
+              />
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="person">Kişi</label>
+            <div class="form-group">
+              <input
+                type="text"
+                id="person"
+                formControlName="person"
+                class="form-control"
+              />
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="address">Adres</label>
+            <div class="form-group">
+              <input
+                type="text"
+                id="address"
+                formControlName="address"
+                class="form-control"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-fill btn-primary" (click)="add()">Ekle</button>
+      </div>
+    </div>
+  </div>
+</div>

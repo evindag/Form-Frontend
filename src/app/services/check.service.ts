@@ -16,4 +16,8 @@ export class CheckService {
     return this.httpClient.get<ListResponseModel<Check>>(this.apiUrl);
       
       }
+      add(check:Check){
+        return this.httpClient.post(this.apiUrl+"Check/Add",check)
+             
+             }
 }

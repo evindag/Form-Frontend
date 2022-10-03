@@ -1,5 +1,5 @@
 export interface Check{
-    checkId:number;
+    id:string;
     date:string;
     checkCost :number;
     description:string;

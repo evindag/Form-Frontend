@@ -17,15 +17,14 @@
 <table *ngIf="dataLoaded==true" class="table">
   <thead>
     <tr>
-      <th>Id</th>
       <th>Tarih</th>
       <th>Fiş No</th>
       <th>Şirket</th>
       <th>Açıklama</th>
       <th>Fiş Türü</th>
       <th>Fiyat</th>
+       <th>KDV</th>
       <th>Toplam Tutar</th>
-      <th>KDV</th>
       <th>Görsel</th>
       <th>Kişi</th>
       <th></th>
@@ -33,18 +32,17 @@
   </thead>
   <tbody>
   <tr *ngFor="let receipt of receipts | receiptPipe:filter">
-    <td>{{ receipt.receiptId }}</td>
     <td>{{ receipt.date }}</td>
     <td>{{ receipt.receiptNo }}</td>
     <td>{{ receipt.company |uppercase}}</td>
     <td>{{ receipt.description }}</td>
     <td>{{ receipt.receiptType |uppercase}}</td>
-    <td>{{ receipt.totalCost |currency}}</td>
-    <td>{{ receipt.totalCost |vatAdded:8 |currency}}</td>
+    <td>{{ receipt.cost |currency}}</td>
     <td>{{ receipt.vat }}</td>
+    <td>{{ receipt.totalCost |vatAdded:8 |currency}}</td>
     <td>{{ receipt.image }}</td>
     <td>{{ receipt.person |uppercase}}</td>
-    <td><button (click)="delete(receipt)" type="button" class="btn btn-danger">x</button></td>
+    <td><button (click)="delete(receipt.id)" type="button" class="btn btn-danger">x</button></td>
   </tr>
   </tbody>
 </table>

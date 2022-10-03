@@ -4,6 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { ReceiptService } from 'src/app/services/receipt.service';
 import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { FormGroup } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -15,11 +17,17 @@ export class ReceiptComponent implements OnInit {
   receipts: Receipt[] = [];
   dataLoaded = false;
   filter = ""
+  
   constructor(private receiptService: ReceiptService,
   private activatedRoute:ActivatedRoute, private toastrService:ToastrService) {}
 
   ngOnInit(): void {
     this.getReceipts();
+ 
+  }
+
+  createreceipt(receipt: any) {
+    throw new Error('Method not implemented.');
   }
 
   getReceipts() {
@@ -29,8 +37,16 @@ export class ReceiptComponent implements OnInit {
       this.dataLoaded = true;
     });
   }
-  delete(receipt:Receipt){
-    this.toastrService.remove(receipt.receiptId)
+  delete(receiptid:string){
+    this.receiptService.deleteReceipts(receiptid).subscribe(response => {
+      console.log(response)
+      this.getReceipts();
+    
+    })
     }
+
+  
+
+    
   }
 
