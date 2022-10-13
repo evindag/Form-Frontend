@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Check } from '../models/check';
 import { ListResponseModel } from '../models/listResponseModel';
+import { ResponseModel } from '../models/responseModel';
 
 @Injectable({
   providedIn: 'root'
@@ -20,4 +21,10 @@ export class CheckService {
         return this.httpClient.post(this.apiUrl+"Check/Add",check)
              
              }
-}
+
+             deleteChecks(id:string):Observable<ResponseModel> {
+              let newPath= this.apiUrl+"Check/Delete?id=" + id
+              return this.httpClient.get<ResponseModel>(newPath);
+                
+                }
+}//backend delete ekle

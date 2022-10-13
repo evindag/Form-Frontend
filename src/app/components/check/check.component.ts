@@ -12,7 +12,7 @@ import { CheckService } from 'src/app/services/check.service';
 export class CheckComponent implements OnInit {
 
   checks: Check[] =[];
-  filter = ""
+  filter = "";
   
 
   constructor(private checkService:CheckService,
@@ -29,5 +29,12 @@ export class CheckComponent implements OnInit {
        
     });
   }
+  delete(checkid:string){
+    this.checkService.deleteChecks(checkid).subscribe(response => {
+      console.log(response)
+      this.getChecks();
+    
+    })
+    }
 
 }

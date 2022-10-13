@@ -15,7 +15,7 @@ import { Observable } from 'rxjs';
 })
 export class ReceiptComponent implements OnInit {
   receipts: Receipt[] = [];
-  dataLoaded = false;
+  dataLoaded = false; 
   filter = ""
   
   constructor(private receiptService: ReceiptService,
